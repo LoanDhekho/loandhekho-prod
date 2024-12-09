@@ -35,21 +35,8 @@ export const NavLink = styled("div")`
   display: inline-block;
   text-align: center;
 
-  @media only screen and (max-width: 1144px) {
+  @media only screen and (max-width: 1140px) {
     display: none; /* Hide nav links below 1144px */
-  }
-`;
-
-export const CustomNavLink = styled("div")`
-  width: 203px;
-  display: inline-block;
-
-  @media only screen and (max-width: 411px) {
-    width: 150px;
-  }
-
-  @media only screen and (max-width: 320px) {
-    width: 118px;
   }
 `;
 
@@ -90,6 +77,21 @@ export const CustomNavLinkSmall = styled(NavLink)`
   }
 `;
 
+export const CustomDrawerLink = styled("div")`
+line-height: 1.5715;
+  display: inline-block;
+  text-align: center;
+font-size: 1.2rem;
+font-family: "Motiva Sans Light", sans-serif;
+  color: #18216d;
+  transition: color 0.2s ease-in;
+  margin: 0.5rem 2rem;
+
+  &:hover {
+    color: #ff825c;
+  }
+`;
+
 export const Label = styled("span")`
   font-weight: 500;
   color: #404041;
@@ -118,7 +120,7 @@ export const Span = styled("span")`
 
 export const Hover = styled("span")`
   cursor: pointer;
-  font-family: bely-display, sans-serif;
+  font-family: "Motiva Sans Light", sans-serif;
   position: relative; /* Required for positioning the pseudo-element */
 
   /* Adding transition for smooth color and underline changes */
@@ -151,4 +153,16 @@ export const Hover = styled("span")`
     color: rgb(255, 130, 92); /* Change the text color on hover */
   }
 `;
+
+export const DrawerLinks = styled("div")`
+  
+  display: flex; /* Force visibility */
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding-top: 1.5rem;
+
+  color: black; /* Ensure text is visible */
+`;
+
 
