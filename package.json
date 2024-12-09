@@ -1,0 +1,32 @@
+{
+  "name": "loan-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.30",
+    "antd": "^5.22.2",
+    "next": "14.2.18",
+    "react": "^18",
+    "react-awesome-reveal": "^4.2.14",
+    "react-dom": "^18",
+    "react-icons": "^5.4.0",
+    "react-spinners": "^0.14.1",
+    "resend": "^4.0.1",
+    "sass": "^1.81.0",
+    "sonner": "^1.7.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.1",
+    "@types/react": "18.3.12",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.18"
+  }
+}

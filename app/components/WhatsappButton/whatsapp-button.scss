@@ -1,0 +1,49 @@
+// .whatsapp-button {
+//     position: fixed;
+//     bottom: 90px;   /* Positioned at the top */
+//     right: 20px; /* Positioned at the right */
+//     z-index: 9999; /* Ensure it stays on top of other elements */
+//     background-color: transparent; /* No background */
+//     padding: 0;   /* No padding */
+//     border: none; /* No border */
+//     display: inline-block; /* Just display the image */
+// }
+
+// .whatsapp-icon {
+//     width: 50px; /* Set size of the icon */
+//     height: 50px; /* Set size of the icon */
+//     cursor: pointer;
+//     display: block; /* Makes the image display properly */
+// }
+
+// /* Make sure the WhatsApp button is hidden when the loader is visible */
+// .loader-visible .whatsapp-button {
+//     display: none;
+//   }
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 90px;  /* Adjusted to move it a bit up from the bottom */
+    right: 20px;
+    z-index: 9999;
+    background-color: transparent;
+    // padding: 8px; /* Smaller padding */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border 0.2s ease;
+}
+
+// .whatsapp-button:hover {
+//     border: 1.5px solid #25D366; /* Subtle green border change */
+// }
+
+.whatsapp-icon {
+    width: 45px; /* Smaller icon size */
+    height: 45px;
+    cursor: pointer;
+    display: block; /* Ensure the SVG fits neatly */
+
+}
+
+
+

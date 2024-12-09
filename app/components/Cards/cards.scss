@@ -1,0 +1,241 @@
+// .cards-container {
+//     padding: 20px;
+//     margin-top: 25px;
+  
+//     .ant-row {
+//       justify-content: center;
+  
+//       .ant-col {
+//         .card {
+//           text-align: center;
+//           border-radius: 8px;
+//           padding: 10px;
+//           height: 150px;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: center;
+//           align-items: center;
+//           background-color: #f2f3f4;
+  
+//           .card-icon {
+//             font-size: 32px;
+//             color: #1890ff;
+//             margin-bottom: 8px;
+//           }
+  
+//           .card-title {
+//             font-size: 16px;
+//             margin: 0;
+//           }
+//         }
+//       }
+//     }
+//   }
+  
+//   .modal {
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     z-index: 1000;
+//     background-color: #fff;
+//     padding: 20px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     width: 90%;
+//     max-width: 400px;
+  
+//     .modal-title {
+//       text-align: center;
+//       margin-bottom: 20px;
+//     }
+  
+//     .form-actions {
+//       text-align: right;
+  
+//       .cancel-button {
+//         margin-right: 10px;
+//       }
+//     }
+//   }
+  
+//   .overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     z-index: 999;
+//   }
+  
+
+
+/* Cards Container */
+// .cards-container {
+//   padding: 20px;
+//   margin-top: 25px;
+//   background-color: #f9f9f9; /* Light background for the entire container */
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   gap: 12px;
+// }
+
+.cards-container {
+  display: flex;
+  margin-top: 40px;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  justify-content: center; /* Horizontally center the cards */
+  align-items: center; /* Vertically center the cards */
+  gap: 16px; /* Space between the cards */
+  padding: 30px;
+  background-color: #f9f9f9;
+  // margin: 0 auto; /* Center the container itself */
+  // height: 100vh; /* Make the container take up the full viewport height */
+  box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.card {
+  width: 90%; /* Take up most of the screen width on mobile */
+  max-width: 240px; /* Prevent cards from becoming too large */
+  height: 150px; /* Maintain the height */
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-icon {
+    font-size: 36px;
+    color: #1890ff;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    transition: color 0.2s ease;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+  }
+
+  &:hover .card-title,
+  &:hover .card-icon {
+    color: #1890ff;
+  }
+}
+/* Adjustments for desktop */
+@media (min-width: 1024px) {
+  .cards-container {
+    padding-left: 40px; /* Add left padding for desktop */
+    padding-right: 40px; /* Add right padding for desktop */
+  }
+
+  .card {
+    width: 235px; /* Adjust the card width to fit well on desktop */
+  }
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .cards-container {
+    height: auto; /* Let the height adjust naturally */
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%; /* Full width on smaller screens */
+    max-width: 280px; /* Ensure cards take up the available width */
+    margin: 0 auto; /* Center the cards horizontally */
+  }
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+
+/* Modal Title */
+.modal-title {
+  text-align: center;
+  font-size: 24px; /* Larger size */
+  font-weight: bold;
+  color: #1a61b1; /* Darker blue shade */
+  margin-bottom: 20px;
+}
+
+  .form-actions {
+    text-align: right;
+    margin-top: 16px;
+
+    .cancel-button {
+      background-color: #d3d3d3;
+      color: #4a4a4a;
+      border: 1px solid #b3b3b3;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-right: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: #b3b3b3;
+        color: #333;
+      }
+    }
+
+    .submit-button {
+      background-color: #1890ff;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #1071e0;
+      }
+    }
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  transition: background-color 0.3s ease;
+}
+
+

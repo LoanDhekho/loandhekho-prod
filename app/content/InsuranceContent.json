@@ -1,0 +1,24 @@
+{
+    "title": "Insurances we Provide",
+    "text": "We provide a wide range of insurance options, including health, life, vehicle, and property insurance, tailored to protect what matters most to you.",
+    "section": [
+      {
+        "title": "Life Insurance",
+        "content": "Secure your family's financial future with tailored life insurance plans offering peace of mind.",
+        "icon": "life-insurance.svg",
+        "link": "https://wa.me/+918506917256?text=Hi!%20I%20want%20to%20enquire%20about%20Life%20Insurance"
+      },
+      {
+        "title": "Health Insurance",
+        "content": "Comprehensive health coverage ensures timely medical care, reducing financial stress during emergencies.",
+        "icon": "health-insurance.svg",
+        "link": "https://wa.me/+918506917256?text=Hi!%20I%20want%20to%20enquire%20about%20Health%20Insurance"
+      },
+      {
+        "title": "Motor Insurance",
+        "content": "Protect your vehicle with motor insurance plans covering accidents, theft, and third-party liabilities.",
+        "icon": "motor-insurance.svg",
+        "link": "https://wa.me/+918506917256?text=Hi!%20I%20want%20to%20enquire%20about%20Motor%20Insurance"
+      }
+    ]
+  }
