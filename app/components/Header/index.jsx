@@ -13,16 +13,33 @@ import {
   NotHidden,
   Menu,
   CustomNavLinkSmall,
+  CustomDrawerLink,
   Label,
   Outline,
   Span,
-  Hover
+  Hover,
+  DrawerLinks,  // Added new styled component for drawer links
 } from "./styles";
+import EmiCalculator from "../EmiCalculator";
 
 const Header = () => {
   const [visible, setVisibility] = useState(false);
   const pathname = usePathname(); // Detects the current route
   const isInsurancePage = pathname === "/insurance"; // Check if on Insurance page
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const openEmiCalculator = () => {
+    setIsModalVisible(true); // Open the EMI Calculator modal
+  };
+
+  const closeEmiCalculator = () => {
+    setIsModalVisible(false); // Close the EMI Calculator modal
+  };
+
+  const toggleButton = () => {
+    setVisibility(!visible);
+  };
 
   // If we are on the Insurance page, hide all links except the logo
   if (isInsurancePage) {
@@ -35,10 +52,6 @@ const Header = () => {
       
     );
   }
-
-  const toggleButton = () => {
-    setVisibility(!visible);
-  };
 
   const MenuItem = () => {
     const scrollTo = (id) => {
@@ -77,8 +90,43 @@ const Header = () => {
     );
   };
 
-  return (
+  const DrawerItems  = () => {
+    const scrollTo = (id) => {
+      const element = document.getElementById(id);
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+      setVisibility(false);
+    };
+    return (
+        <>
+          <DrawerLinks>
+              <CustomDrawerLink onClick={() => scrollTo("about")}>
+                <Hover>About Us</Hover>
+              </CustomDrawerLink>
 
+              <CustomDrawerLink onClick={() => scrollTo("mission")}>
+                <Hover>Our Mission</Hover>
+              </CustomDrawerLink>
+              
+              <CustomDrawerLink>
+                 <Link href='/insurance'><Hover>Insurance</Hover></Link>
+              </CustomDrawerLink>
+
+              <CustomDrawerLink
+                style={{ width: "180px" }}
+              >
+              <Span>
+                <Button onClick={openEmiCalculator}>EMI Calculator</Button>
+              </Span>
+              <EmiCalculator isVisible={isModalVisible} onClose={closeEmiCalculator} />
+              </CustomDrawerLink>
+            </DrawerLinks>        
+        </>
+    )
+  }
+
+  return (
     <HeaderSection>
       {/* <SvgIcon src="LoanDekho.png" width="220px" height="auto" /> */}
       <Container>
@@ -94,19 +142,21 @@ const Header = () => {
             <Outline />
           </Burger>
         </Row>
-        <Drawer closable={false} open={visible} onClose={toggleButton}>
-          <Col style={{ marginBottom: "2.5rem" }}>
-            <Label onClick={toggleButton}>
-              <Col span={12}>
-                <Menu>Menu</Menu>
-              </Col>
-              <Col span={12}>
-                <Outline />
-              </Col>
-            </Label>
-          </Col>
-          <MenuItem />
-        </Drawer>
+
+         {/* Drawer for smaller screens */}
+          <Drawer closable={false} open={visible} onClose={toggleButton}>
+            <Col style={{ marginBottom: "2.5rem" }}>
+              <Label onClick={toggleButton}>
+                <Col span={12}>
+                  <Menu>Menu</Menu>
+                </Col>
+                <Col span={12}>
+                  <Outline />
+                </Col>
+              </Label>
+            </Col>
+            <DrawerItems />
+          </Drawer>
       </Container>
     </HeaderSection>
   );
