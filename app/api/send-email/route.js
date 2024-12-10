@@ -10,8 +10,8 @@ export async function POST(req) {
 
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'LoanDekho <info@loandhekho.com>',
-      to: [email],
+      from: 'LoanDhekho <info@loandhekho.com>',
+      to: ['manavsharma7dec@gmail.com'],
       subject: 'Welcome to LoanDekho.com',
       react: EmailTemplate({ firstName: name }),
     });
