@@ -17,7 +17,7 @@ import ClientWrapper from "./components/ClientWrapper";
 // });
 
 export const metadata = {
-  title: "LoanDekho.com",
+  title: "LoanDhekho",
   description: "India's Leading Finance Agency",
 };
 
