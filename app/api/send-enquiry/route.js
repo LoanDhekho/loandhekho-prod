@@ -17,7 +17,7 @@ export async function POST(req) {
 
     const data = await resend.emails.send({
       from: 'LoanDekho <info@loandhekho.com>',
-      to: 'aniketsingh1602@gmail.com',
+      to: 'manavsharma7dec@gmail.com',
       subject: `New Enquiry: ${queryType}`,
       html: `
         <h3>${queryType} Enquiry</h3>
